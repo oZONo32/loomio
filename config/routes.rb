@@ -1,7 +1,7 @@
 Loomio::Application.routes.draw do
   ActiveAdmin.routes(self)
 
-  devise_for :users, controllers: { sessions: 'users/sessions', 
+  devise_for :users, controllers: { sessions: 'users/sessions',
                                     invitations: 'users/invitations' }
 
   resources :group_requests, only: [:create, :new] do
@@ -83,6 +83,10 @@ Loomio::Application.routes.draw do
   match "/settings", :to => "users#settings", :as => :user_settings
   match 'email_preferences', :to => "email_preferences#edit", :as => :email_preferences, :via => :get
   match 'email_preferences', :to => "email_preferences#update", :as => :update_email_preferences, :via => :put
+
+  resources :contributions, only: :index do
+  end
+
 
   authenticated do
     root :to => 'dashboard#show'

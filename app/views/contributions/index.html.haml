@@ -1,0 +1,37 @@
+#contributions
+  .row
+    .span10
+      %h1 Have you thought about contributing to Loomio?
+      %p Loomio is a cooperative social enterprise, working to make everyday democracy accessible to as many people as possible. We believe that money should never be a barrier to groups doing great stuff in their communities, so we’re developing an ethical revenue model to resource Loomio’s software development.
+      %p Groups with a budget pay a monthly group subscription to use Loomio. In groups without a budget, individual members make a voluntary contribution within their means.
+      %p Since your group .Group name. has chosen to use Loomio without paying a subscription, we’re inviting you to contribute to Loomio, to make it easy for as many people as possible to participate in decisions that affect them.
+  .row
+    .span6
+      %h2 Monthly contribution
+
+      %a{:href => "https://subscription.swipehq.com/?contract_id=2075FEF1BEC98C", class: "btn btn-info"} $2
+      %a{:href => "https://subscription.swipehq.com/?contract_id=12400461853BF0", class: "btn btn-info"} $5
+      %a{:href => "https://subscription.swipehq.com/?contract_id=2075FEF58DCF04", class: "btn btn-info"} $10
+      %a{:href => "https://subscription.swipehq.com/?contract_id=2075FEF5E985BC", class: "btn btn-info"} $20
+      %a{:href => "https://subscription.swipehq.com/?contract_id=A57235C1CC0", class: "btn btn-info"} $50
+
+    .span6
+      %h2 One-time contribution
+
+      %form{:action => "https://payment.swipehq.com/", :enctype => "multipart/form-data", :method => "POST"}
+        %table
+          %tr
+            %td
+              %input#item_quantity{:name => "item_quantity", :size => "3", :style => "background-color: #FFFFFF; border: 1px solid #CCCCCC; padding: 5px;", :type => "text", :value => "1"}/
+            %td
+              %div{:style => "width:95px; height:30px; border: thin solid grey; background-color: #9FBF00; text-align: center; border-radius: 9px; cursor: pointer;"}
+                %table{:border => "0", :cellpadding => "0", :cellspacing => "0", :height => "100%", :width => "100%"}
+                  %tr
+                    %td{:align => "center", :style => "border: none;"}
+                      %input#submit{:name => "submit", :style => "cursor:pointer; color:#fff; text-decoration: none; font-family:'Arial', 'Helvetica', sans-serif; font-size: 14px; font-weight: bold; border: none; background-color: #9FBF00;", :type => "submit", :value => "submit"}/
+                      %input#product_id{:name => "product_id", :type => "hidden", :value => "2075FF091C58D9"}/
+      %a{:href => "https://subscription.swipehq.com/?contract_id=", class: "btn btn-info"} $5
+      %a{:href => "https://subscription.swipehq.com/?contract_id=", class: "btn btn-info"} $10
+      %a{:href => "https://subscription.swipehq.com/?contract_id=", class: "btn btn-info"} $20
+      %a{:href => "https://subscription.swipehq.com/?contract_id=", class: "btn btn-info"} $50
+      %a{:href => "https://subscription.swipehq.com/?contract_id=", class: "btn btn-info"} $100

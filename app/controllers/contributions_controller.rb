@@ -1,0 +1,3 @@
+class ContributionsController < BaseController
+
+end
