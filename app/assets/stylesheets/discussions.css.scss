@@ -40,10 +40,14 @@ body.discussions.new, body.discussions.create {
 }
 
 .model-description { padding-bottom: 10px; }
-.description-body {
-  color: $dark-grey;
-  margin-bottom: 10px;
+
+body.discussions.show {
+  .description-body {
+    color: $dark-grey;
+    margin-bottom: 10px;
+  }
 }
+.revision-title p { font-size: 85%; }
 
 #description-edit-form {
   margin-bottom: 0px;
@@ -411,6 +415,7 @@ li.popover-item {
 li.selector-item .discussion-preview:hover {
   background-color: $selector;
 }
+
 .discussion-preview {
   float: left;
   width: 620px;
@@ -494,7 +499,13 @@ li.selector-item .discussion-preview:hover {
     position: relative;
     z-index: 2;
   }
+
+  // color coded urgency labels
+  .color-urgent { background-color: #CA3232; }
+  .color-warning { background-color: #F89406; }
+  .color-ok { background: #016B01; }
 }
+
 .popover-motion-name {
   font-weight: normal;
   margin-top: 10px;
