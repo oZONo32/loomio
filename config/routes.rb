@@ -18,23 +18,22 @@ Loomio::Application.routes.draw do
 
   resources :groups, except: [:index, :new] do
     resources :invitations, only: [:index, :destroy, :new, :create], controller: 'groups/invitations'
-    resources :membership_requests, only: [:new, :create] do
+
+    resources :membership_requests, only: [:new, :create, :index], controller: 'groups/membership_requests' do
       member do
         post :approve
         post :ignore
       end
     end
-    get :membership_requests, to: 'membership_requests#show', as: :view_membership_requests
-
     resources :memberships, only: [:index, :destroy, :new, :create], controller: 'groups/memberships' do
       member do
        post :make_admin
        post :remove_admin
 
        # these three (and #new) are for membership requests which I hope to split off into a new class
-       post :approve_request, as: :approve_request_for
-       post :ignore_request, as: :ignore_request_for
-       delete :cancel_request, as: :cancel_request_for
+       # post :approve_request, as: :approve_request_for
+       # post :ignore_request, as: :ignore_request_for
+       # delete :cancel_request, as: :cancel_request_for
       end
     end
 

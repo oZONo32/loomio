@@ -14,10 +14,10 @@ Given(/^I am on the group page$/) do
   visit group_path(@group)
 end
 
-When(/^I approve the membership request$/) do
-  click_on "approve"
-  click_on "confirm-action"
-end
+# When(/^I approve the membership request$/) do
+#   click_on "approve"
+#   click_on "confirm-action"
+# end
 
 Then(/^the request should be approved$/) do
   @membership.reload.should be_member

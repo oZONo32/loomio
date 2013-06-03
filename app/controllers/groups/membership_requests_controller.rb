@@ -4,10 +4,12 @@ class Groups::MembershipRequestsController < ApplicationController
 
   def new
     @membership_request = MembershipRequest.new group: @group
+    render 'groups/membership_requests/new'
   end
 
   def create
     @membership_request = MembershipRequest.new params[:membership_request]
+    # if @group.members.find_by_user_id(current_user)
     if @group.members.where('email = ?', @membership_request.email).present?
       flash[:alert]   = "A user with that email address is already a member of this group."
     else
@@ -20,36 +22,20 @@ class Groups::MembershipRequestsController < ApplicationController
         flash[:success] = "Membership requested"
       end
     end
-    # unless @group.membership_requests.where('email = ?', @membership_request.email).present?
-    #   @membership_request.group = @group
-    #   @membership_request.user = current_user if user_signed_in?
-    #   @membership_request.save
-    #   flash[:success] = "Membership requested"
-    # else
-    #   flash[:alert] = "A membership request for that email already exists."
-    # end
     redirect_to @group
   end
 
-  def show
-
+  def index
   end
 
   def approve
-
+    flash[:success] = "Request approved"
+    redirect_to group_membership_requests_path(@group)
   end
 
-  # def approve_request
-  #   @membership = Membership.find(params[:id])
-  #   if @membership.request?
-  #     @membership.approve!
-  #     flash[:notice] = t("notice.membership_approved")
-  #     UserMailer.group_membership_approved(@membership.user, @membership.group).deliver
-  #   else
-  #     flash[:warning] = t("warning.user_already_member")
-  #   end
-  #   redirect_to @membership.group
-  # end
+  def ignore
+  end
+
 
   private
 
